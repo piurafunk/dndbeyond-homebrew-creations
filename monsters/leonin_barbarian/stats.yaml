@@ -4,37 +4,60 @@ challenge_rating: 2
 special_traits:
   - name: Reckless
     description: >
-      <p><em><strong>Reckless.</strong></em>
-      At the start of its turn, the berserker can gain advantage on all melee
-      weapon attack rolls during that turn, but attack rolls against it have
-      advantage until the start of its next turn.</p>
+      At the start of {{meta.possessive}} turn, {{name}} can gain advantage on all melee
+      weapon attack rolls during that turn, but attack rolls against {{meta.objective}} have
+      advantage until the start of {{meta.possessive}} next turn.
 actions:
-  - name: Greataxe
+  - name: Multiattack
+    is_multiattack: true
     description: >
-      <p><em><strong>Greataxe.</strong>
-      Melee Weapon Attack:</em> [rollable]+5;{"diceNotation":"1d20+5","rollType":"to hit","rollAction":"Greataxe"}[/rollable]
-      to hit, reach 5 ft., one target. <em>Hit:</em> 9 [rollable](1d12 + 3);{"diceNotation":"1d12+3","rollType":"damage","rollAction":"Greataxe","rollDamageType":"slashing"}[/rollable]
-      slashing damage.</p>
+      {{meta.proper_name}} makes three claw attacks.
+    combinations:
+      - - reference: actions.*.name == 'Claws'
+          quantity: 3
+  - name: Claws
+    type: melee
+    attack_bonus: 5
+    reach: 5
+    number_of_targets: 1
+    damage:
+      - die_count: 1
+        die_size: 12
+        bonus: 0
+        type: slashing
+        ability: strength
+        description:
+bonus_actions:
+  - name: Rage
+    description: >
+      {{meta.proper_name}} enters a blind rage. {{meta.pronoun}} gains the following
+      benefits:
+        - Advantage on strength checks and strength saving throws.
+        - +2 damage on strength based melee attacks
+        - Resistance to bludgeoning, piercing, and slashing damage
+
+      {{meta.proper_name}} can use this ability once per day.
 reactions: []
 characteristics:
-bonus_actins: []
 is_legendary: false
 legendary_actions: []
 is_mythic: false
 mythic_actions: []
 has_lair: false
-lair_description:
-lair_actions: []
-armor_class: 13
-armor_type: hide armor
+lair:
+  description:
+  actions: []
+armor:
+  armor_class: 15
+  type: unarmored
 passive_perception: 10
-hit_die_count: 9
-hit_die_size: 8
-hit_points_modifier: 27
-average_hit_points: 67
+hit_points:
+  die_count: 9
+  die_size: 8
+  modifier: 0
 abilities:
   strength: 16
-  dexterity: 12
+  dexterity: 14
   constitution: 17
   intelligence: 9
   wisdom: 11
@@ -46,5 +69,12 @@ damage_immunities: []
 condition_immunities: []
 environments: []
 languages: []
+sense: []
+skills: []
 movement:
   walk: 30
+meta:
+  pronoun: it
+  objective: it
+  possessive: its
+  proper_name: the {{name}}
