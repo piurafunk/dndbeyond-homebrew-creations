@@ -1,0 +1,50 @@
+name: Leonin Berserker
+size: medium
+challenge_rating: 2
+special_traits:
+  - name: Reckless
+    description: >
+      <p><em><strong>Reckless.</strong></em>
+      At the start of its turn, the berserker can gain advantage on all melee
+      weapon attack rolls during that turn, but attack rolls against it have
+      advantage until the start of its next turn.</p>
+actions:
+  - name: Greataxe
+    description: >
+      <p><em><strong>Greataxe.</strong>
+      Melee Weapon Attack:</em> [rollable]+5;{"diceNotation":"1d20+5","rollType":"to hit","rollAction":"Greataxe"}[/rollable]
+      to hit, reach 5 ft., one target. <em>Hit:</em> 9 [rollable](1d12 + 3);{"diceNotation":"1d12+3","rollType":"damage","rollAction":"Greataxe","rollDamageType":"slashing"}[/rollable]
+      slashing damage.</p>
+reactions: []
+characteristics:
+bonus_actins: []
+is_legendary: false
+legendary_actions: []
+is_mythic: false
+mythic_actions: []
+has_lair: false
+lair_description:
+lair_actions: []
+armor_class: 13
+armor_type: hide armor
+passive_perception: 10
+hit_die_count: 9
+hit_die_size: 8
+hit_points_modifier: 27
+average_hit_points: 67
+abilities:
+  strength: 16
+  dexterity: 12
+  constitution: 17
+  intelligence: 9
+  wisdom: 11
+  charisma: 9
+proficiencies:
+  saving_throws: []
+damage_resistances: []
+damage_immunities: []
+condition_immunities: []
+environments: []
+languages: []
+movement:
+  walk: 30
